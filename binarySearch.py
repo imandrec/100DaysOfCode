@@ -21,3 +21,17 @@ class Solution:
         return left
 
 Time Complexity: O(log n), where n is the number of elements in the input array nums.
+
+*****
+
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+
+        missing = len(nums)
+        print(missing)
+        
+        for i in range(len(nums)):
+            missing += i - nums[i]
+        return missing
+
+Time Complexity: O(n), where n is the length of the nums list
