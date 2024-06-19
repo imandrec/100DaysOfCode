@@ -19,3 +19,5 @@ class Solution:
                 right = middle - 1
 
         return left
+
+Time Complexity: O(log n), where n is the number of elements in the input array nums.
