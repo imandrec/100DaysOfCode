@@ -7,3 +7,35 @@ class Solution:
         intersection_set = set1 & set2
         
         return sorted(intersection_set)
+
+****************
+class Solution:
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+
+        pairs1 = []
+        pairs2 = []
+        
+        for i in range(len(nums1)-1):
+            pair = [nums1[i], nums1[i+1]]  
+            pairs1.append(pair) 
+        if len(nums1) == 1:
+            pairs1.append([nums1[0]])
+
+        for i in range(len(nums2)-1):
+            pair = [nums2[i], nums2[i+1]]  
+            pairs2.append(pair) 
+        if len(nums2) == 1:
+            pairs2.append([nums2[0]])
+
+        intersection = []
+        for pair in pairs1:
+            if pair in pairs2:
+                if pair[0] == pair[1]:
+                    intersection.append(pair[0])
+            else:
+                intersection.append(pair)
+        return intersection
+            
+    
+            
+            
